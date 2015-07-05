@@ -152,7 +152,7 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
     }
 
     private void didUpdateData(final String jsonString) {
-        // TODO: Construct the Earthquake object from jsonString
+        // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
         // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
     }
 
