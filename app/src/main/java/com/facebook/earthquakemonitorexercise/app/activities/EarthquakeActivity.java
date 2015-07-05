@@ -36,11 +36,13 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
+        // TODO: Register for the particular broadcast based on ACTION string
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        // TODO: Unregister the listener when the application is paused
     }
 
     /**
