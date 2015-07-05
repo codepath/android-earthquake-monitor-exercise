@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EarthquakeMonitorExercise</string>
+    <string name="title_activity_earthquake">Earthquake Monitor</string>
+</resources>

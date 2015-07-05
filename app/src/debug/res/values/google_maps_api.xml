@@ -1,0 +1,16 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=1C:2D:97:67:19:DC:E9:36:70:D4:CE:C0:B8:AD:52:AE:FB:E4:D5:77%3Bcom.facebook.earthquakemonitorexercise.app
+
+    You can also add your credentials to an existing key, using this line:
+    1C:2D:97:67:19:DC:E9:36:70:D4:CE:C0:B8:AD:52:AE:FB:E4:D5:77;com.facebook.earthquakemonitorexercise.app
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyATHGx6wtPxSGSl2UD1w6sX6zZDGVJjx6I</string>
+</resources>
