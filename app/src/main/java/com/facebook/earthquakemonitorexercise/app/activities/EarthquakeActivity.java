@@ -67,24 +67,7 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
             mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-            // TODO: Delete the following lines once you get the json data from IntentService.
-            // Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
         }
-    }
-
-    // TODO: Delete the following method once you get the json data from IntentService.
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 
     // Add markers to the map and prepare info window.
