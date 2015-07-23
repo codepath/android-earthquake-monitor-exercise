@@ -44,21 +44,27 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
         super.onPause();
         // TODO: Unregister the listener when the application is paused
     }
+    
+    // Deserialize the json response and redraw the earthquake location accordingly
+    private void didUpdateData(final String jsonString) {
+        // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
+        // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
+    }
+    
+    // When the preference value changes, redraw the map
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        // TODO: Get the changed json string from SharedPreferences.
+        // TODO: Call didUpdateData() so the latest markers can be adjusted on the screen.
+    }
+
+    // TODO: Define the onReceive callback here to persist the json string when data is received from the IntentService.
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
      * installed) and the map has not already been instantiated.. This will ensure that we only ever
      * call {@link #setUpMap()} once when {@link #mMap} is not null.
      * <p/>
-     * If it isn't installed {@link SupportMapFragment} (and
-     * {@link com.google.android.gms.maps.MapView MapView}) will show a prompt for the user to
-     * install/update the Google Play services APK on their device.
-     * <p/>
-     * A user can return to this FragmentActivity after following the prompt and correctly
-     * installing/updating/enabling the Google Play services. Since the FragmentActivity may not
-     * have been completely destroyed during this process (it is likely that it would only be
-     * stopped or paused), {@link #onCreate(Bundle)} may not be called again so we should call this
-     * method in {@link #onResume()} to guarantee that it will be called.
      */
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
@@ -66,7 +72,8 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
             // Try to obtain the map from the SupportMapFragment.
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            // If map does exist, configure the map type to HYBRID
+            if (mMap != null) mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         }
     }
 
@@ -133,17 +140,4 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
             }
         });
     }
-
-    private void didUpdateData(final String jsonString) {
-        // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
-        // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        // TODO: Get the changed json string from SharedPreferences.
-        // TODO: Call didUpdateData() so the latest markers can be adjusted on the screen.
-    }
-
-    // TODO: Define the onReceive callback to persist the json string when data is received from the IntentService.
 }
