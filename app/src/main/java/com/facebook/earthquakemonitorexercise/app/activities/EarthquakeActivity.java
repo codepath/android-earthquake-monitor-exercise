@@ -45,17 +45,17 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
         // TODO: Unregister the listener when the application is paused
     }
     
+    // When the preference value changes, redraw the map
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        // TODO: Get the changed json string from SharedPreferences using `key`.
+        // TODO: Call didUpdateData(String jsonString) to draw the new markers on the screen.
+    }
+    
     // Deserialize the json response and redraw the earthquake location accordingly
     private void didUpdateData(final String jsonString) {
         // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
         // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
-    }
-    
-    // When the preference value changes, redraw the map
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        // TODO: Get the changed json string from SharedPreferences.
-        // TODO: Call didUpdateData() so the latest markers can be adjusted on the screen.
     }
 
     // TODO: Define the onReceive callback here to persist the json string when data is received from the IntentService.
