@@ -61,9 +61,8 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
     // TODO: Define the onReceive callback here to persist the json string when data is received from the IntentService.
 
     /**
-     * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
+     * Sets up the map if it is possible to do so (i.e. the Google Play services APK is correctly
      * installed) and the map has not already been instantiated.
-     * <p/>
      */
     private void setUpMapIfNeeded() {
         // Do a null check to confirm that we have not already instantiated the map.
