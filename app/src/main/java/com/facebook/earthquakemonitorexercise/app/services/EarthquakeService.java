@@ -18,9 +18,10 @@ public class EarthquakeService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         // TODO: Get json from the  earthquake data returned by the url
+        // --> Hint: Check the `common/Utils` class for a network downloading helper for above
         // TODO: Construct an intent and fire a broadcast to send the json string to the activity.
-        // 1. Construct an Intent tying it to the ACTION (arbitrary event namespace)
-        // 2. Put extras KEY_RESULTS, KEY_RESULT_CODE into the intent as usual
-        // 3. Fire the broadcast with intent packaged
+        // 1. Construct an Intent to be sent for the ACTION (arbitrary event namespace)
+        // 2. Put the extras `KEY_RESULTS`, `KEY_RESULT_CODE` into the intent
+        // 3. Fire the broadcast with intent packaged to be received by the activity
     }
 }
