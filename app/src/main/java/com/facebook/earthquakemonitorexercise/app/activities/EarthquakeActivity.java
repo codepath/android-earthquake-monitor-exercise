@@ -45,6 +45,8 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
         // TODO: Unregister the listener when the application is paused
     }
     
+    // TODO: Define the onReceive callback here to persist the json string when data is received from the IntentService.
+    
     // When the preference value changes, redraw the map
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -57,8 +59,6 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
         // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
         // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
     }
-
-    // TODO: Define the onReceive callback here to persist the json string when data is received from the IntentService.
 
     /**
      * Sets up the map if it is possible to do so (i.e. the Google Play services APK is correctly
