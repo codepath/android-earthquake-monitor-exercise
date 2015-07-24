@@ -56,8 +56,31 @@ public class EarthquakeActivity extends FragmentActivity implements SharedPrefer
     
     // Deserialize the json response and redraw the earthquake location accordingly
     private void didUpdateData(final String jsonString) {
-        // TODO: Deserialize the JSON response in order to construct an instance of the Earthquake class.
-        // TODO: Move the camera so the earthquake locations are within the bounds of the screen.
+        // Deserialize the JSON response in order to construct an instance of the Earthquake class.
+        if (jsonString == null || jsonString.length() == 0) return;
+        try {
+            boolean updateMapCamera = mFeatures.size() == 0;
+            // Construct the Earthquake object from jsonString
+            final Earthquake earthquake = Earthquake.GSON.fromJson(jsonString, Earthquake.class);
+            if (earthquake != null) {
+                if (earthquake.metadata != null && earthquake.features != null) {
+                    setTitle(earthquake.metadata.title + " (" + earthquake.metadata.count  + ")");
+                    for (final Earthquake.Feature feature : earthquake.features) {
+                        final String id = feature.id;
+                        if (!mFeatures.containsValue(id)) {
+                            mFeatures.put(id, feature);
+                            addMarker(id);
+                        }
+                    }
+                }
+            }
+            // Move the camera so the earthquake locations are within the bounds of the screen.
+            if (updateMapCamera && mMap != null) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(mBoundsBuilder.build(), (int) (50 * Resources.getSystem().getDisplayMetrics().density)));
+            }
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
