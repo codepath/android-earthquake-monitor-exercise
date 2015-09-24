@@ -1,4 +1,4 @@
-package com.facebook.earthquakemonitorexercise.app.models;
+package com.codepath.earthquakemonitorexercise.app.models;
 
 import com.google.gson.Gson;
 

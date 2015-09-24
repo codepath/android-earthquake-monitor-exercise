@@ -1,4 +1,4 @@
-package com.facebook.earthquakemonitorexercise.app.services;
+package com.codepath.earthquakemonitorexercise.app.services;
 
 import android.app.IntentService;
 import android.content.Intent;

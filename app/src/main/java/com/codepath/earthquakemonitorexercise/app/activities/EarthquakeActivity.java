@@ -1,16 +1,30 @@
-package com.facebook.earthquakemonitorexercise.app.activities;
+package com.codepath.earthquakemonitorexercise.app.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.*;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import com.facebook.earthquakemonitorexercise.app.R;
-import com.facebook.earthquakemonitorexercise.app.models.Earthquake;
+
+import com.codepath.earthquakemonitorexercise.app.R;
+import com.codepath.earthquakemonitorexercise.app.models.Earthquake;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.*;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.JsonSyntaxException;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

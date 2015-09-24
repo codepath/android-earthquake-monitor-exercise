@@ -1,4 +1,4 @@
-package com.facebook.earthquakemonitorexercise.app.common;
+package com.codepath.earthquakemonitorexercise.app.common;
 
 import java.io.BufferedReader;
 import java.io.IOException;

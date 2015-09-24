@@ -1,4 +1,4 @@
-package com.facebook.earthquakemonitorexercise.app.application;
+package com.codepath.earthquakemonitorexercise.app.application;
 
 import android.app.Application;
 
